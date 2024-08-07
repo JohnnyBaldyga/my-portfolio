@@ -1,52 +1,73 @@
 import React, { useState } from "react";
-import useFormValidation from "../hooks/useFormValidation";
 
-const Contact = () => {
-  const [values, handleChange, handleBlur, errors] = useFormValidation();
+function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let formErrors = {};
+    if (!formData.name) formErrors.name = "Name is required";
+    if (!formData.email) formErrors.email = "Email is required";
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email))
+      formErrors.email = "Email is invalid";
+    if (!formData.message) formErrors.message = "Message is required";
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      alert("Form submitted");
+      // Handle form submission here
+    }
+  };
 
   return (
     <section>
-      <h1>Contact</h1>
-      <form>
+      <h2>Contact</h2>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name</label>
+          <label>Name</label>
           <input
             type="text"
-            id="name"
             name="name"
-            value={values.name || ""}
+            value={formData.name}
             onChange={handleChange}
-            onBlur={handleBlur}
           />
-          {errors.name && <span>{errors.name}</span>}
+          {errors.name && <span className="error">{errors.name}</span>}
         </div>
         <div>
-          <label htmlFor="email">Email</label>
+          <label>Email</label>
           <input
             type="email"
-            id="email"
             name="email"
-            value={values.email || ""}
+            value={formData.email}
             onChange={handleChange}
-            onBlur={handleBlur}
           />
-          {errors.email && <span>{errors.email}</span>}
+          {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label>Message</label>
           <textarea
-            id="message"
             name="message"
-            value={values.message || ""}
+            value={formData.message}
             onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.message && <span>{errors.message}</span>}
+          ></textarea>
+          {errors.message && <span className="error">{errors.message}</span>}
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Send</button>
       </form>
     </section>
   );
-};
+}
 
 export default Contact;

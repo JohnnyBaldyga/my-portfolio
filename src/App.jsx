@@ -1,25 +1,25 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
+import { Route, Routes } from "react-router-dom";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
-import About from "./components/About";
+import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-import Resume from "./components/Resume";
+import NavBar from "./components/NavBar";
+
 import "./App.css";
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Switch>
-          <Route path="/" exact component={About} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/resume" component={Resume} />
-        </Switch>
-      </main>
+    <div>
+      <NavBar />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<AboutMe />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
