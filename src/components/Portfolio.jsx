@@ -1,9 +1,21 @@
 import React from "react";
+import datenight from "../assets/datenight.jpg";
+import socialpulse from "../assets/socialpulse.jpg";
 
 const Portfolio = () => {
   const projects = [
-    { title: "Project 1", image: "project1.jpg", deployed: "#", github: "#" },
-    { title: "Project 2", image: "project2.jpg", deployed: "#", github: "#" },
+    {
+      title: "Date Night",
+      image: datenight,
+      deployed: "https://tannerhicks02.github.io/date-night-website-proj-1/",
+      github: "https://github.com/TannerHicks02/date-night-website-proj-1",
+    },
+    {
+      title: "Social Pulse",
+      image: socialpulse,
+      deployed: "https://social-pulse-x72y.onrender.com/",
+      github: "https://github.com/JohnnyBaldyga/social-pulse",
+    },
     // Add more projects here
   ];
 

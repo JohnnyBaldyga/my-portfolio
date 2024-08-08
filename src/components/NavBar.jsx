@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <header>
-      <h1>Developer Name</h1>
+      <h1>Jonathan Baldyga</h1>
       <nav>
         <NavLink to="/" end activeClassName="active">
           About Me

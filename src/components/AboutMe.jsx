@@ -1,11 +1,11 @@
 import React from "react";
-
+import avatar from "../assets/avatar.jpg";
 function AboutMe() {
   return (
     <section>
       <h2>About Me</h2>
-      <img src="https://via.placeholder.com/150" alt="Developer" />
-      <p>Short bio about the developer.</p>
+      <img src={avatar} alt="Developer" />
+      <p>Jonathan is a new Developer begining to learn the ropes.</p>
     </section>
   );
 }
