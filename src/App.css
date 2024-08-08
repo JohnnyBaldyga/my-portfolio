@@ -47,3 +47,60 @@ footer {
   border: 1px solid #ddd;
   padding: 1rem;
 }
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  footer {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .content {
+    padding: 0.5rem;
+  }
+
+  .portfolio-item {
+    padding: 0.5rem;
+  }
+  .portfolio-item img {
+    max-width: 80px;
+  }
+  footer {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
