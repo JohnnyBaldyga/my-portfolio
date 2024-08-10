@@ -35,6 +35,7 @@ const Portfolio = () => {
               >
                 Deployed Application
               </a>
+              <br></br>
               <a
                 href={project.github}
                 target="_blank"

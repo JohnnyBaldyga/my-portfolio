@@ -3,11 +3,17 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
   color: white;
   padding: 1rem;
+  width: 100%;
 }
-
+.nav {
+  margin-right: 200px;
+}
 header h1 {
   margin: 0;
 }
@@ -21,7 +27,12 @@ nav a {
 nav a.active {
   text-decoration: underline;
 }
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 .content {
   padding: 2rem;
 }
@@ -29,8 +40,12 @@ nav a.active {
 footer {
   background-color: #333;
   color: white;
-  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
+  padding: 1rem;
 }
 
 .error {
