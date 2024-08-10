@@ -6,7 +6,7 @@ import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
-import Resume from "./components/NavBar";
+import Resume from "./components/Resume";
 import "./App.css";
 
 const App = () => {

@@ -15,6 +15,9 @@ function NavBar() {
         <NavLink to="/contact" activeClassName="active">
           Contact
         </NavLink>
+        <NavLink to="/resume" activeClassName="active">
+          Resume
+        </NavLink>
       </nav>
     </header>
   );
