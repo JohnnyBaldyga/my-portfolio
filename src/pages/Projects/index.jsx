@@ -1,8 +1,13 @@
 import React from "react";
-import datenight from "../assets/datenight.jpg";
-import socialpulse from "../assets/socialpulse.jpg";
+import datenight from "../../assets/datenight.jpg";
+import socialpulse from "../../assets/socialpulse.jpg";
+import travelBuddy from "../../assets/travelbuddy.png";
+import { Link } from "@mui/material";
+import LaunchIcon from "@mui/icons-material/Launch";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import "./project.css";
 
-const Portfolio = () => {
+const Projects = () => {
   const projects = [
     {
       title: "Date Night",
@@ -16,33 +21,41 @@ const Portfolio = () => {
       deployed: "https://social-pulse-x72y.onrender.com/",
       github: "https://github.com/JohnnyBaldyga/social-pulse",
     },
+    {
+      title: "Travel Buddy",
+      image: travelBuddy,
+      deployed: "https://travel-buddy-e7hd.onrender.com/",
+      github: "https://github.com/crestonesoftware/travel-buddy",
+    },
+
     // Add more projects here
   ];
 
   return (
     <section>
-      <h1>Portfolio</h1>
+      <h3>Projects</h3>
       <div className="projects">
         {projects.map((project, index) => (
           <div key={index} className="project">
-            <h2>{project.title}</h2>
+            <h4>{project.title}</h4>
             <img src={project.image} alt={project.title} />
-            <div>
-              <a
+            <div className="project-links">
+              <Link
                 href={project.deployed}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Deployed Application"
               >
-                Deployed Application
-              </a>
-              <br></br>
-              <a
+                <LaunchIcon />
+              </Link>
+              <Link
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Repository"
               >
-                GitHub Repository
-              </a>
+                <GitHubIcon />
+              </Link>
             </div>
           </div>
         ))}
@@ -51,4 +64,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;
